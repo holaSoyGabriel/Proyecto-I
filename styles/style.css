@@ -1,0 +1,403 @@
+/** @format */
+
+/* Importar fuente desde Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap");
+
+/* Estilos generales */
+body {
+	font-family: "Luckiest Guy", sans-serif;
+	background-color: #151515; /* Fondo oscuro tipo Dragon Ball */
+	color: #fff; /* Texto blanco */
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden !important;
+}
+
+/* Encabezado */
+/* Header con fondo llamativo */
+header {
+	background: linear-gradient(90deg, #ff7300, #ff4500);
+	padding: 20px;
+	text-align: center;
+	border-bottom: 5px solid yellow;
+}
+
+/* Contenedor para organizar contenido */
+.header-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* Estilo del título */
+header h1 {
+	color: white;
+	font-size: 32px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+/* Menú de navegación */
+nav ul {
+	list-style: none;
+	padding: 0;
+	display: flex;
+	gap: 20px;
+}
+
+nav ul li {
+	display: inline-block;
+}
+
+nav ul li a {
+	text-decoration: none;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 10px 15px;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 255, 0.1);
+	transition: 0.3s;
+}
+
+/* Efecto al pasar el mouse */
+nav ul li a:hover {
+	background-color: yellow;
+	color: black;
+}
+
+/* Sección de bienvenida */
+section {
+	padding: 30px;
+	margin: 20px auto;
+	max-width: 80%;
+	border-radius: 10px;
+	background-color: rgba(
+		255,
+		115,
+		0,
+		0.1
+	); /* Naranja Saiyajin con transparencia */
+}
+
+/* Banner con Fondo Épico */
+#banner {
+	background-image: url("../assest/img/Goku\ UI.jpg");
+	background-size: cover;
+	background-position: center;
+	padding: 60px 20px;
+	text-align: center;
+	color: azure;
+}
+
+/* Efecto Parallax */
+#banner {
+	background-attachment: fixed;
+}
+
+/* Estilos del Texto */
+.banner-title {
+	font-size: 36px;
+	font-weight: bold;
+	text-shadow: 0 0 15px rgb(84, 189, 215);
+}
+
+.banner-text {
+	font-size: 20px;
+	max-width: 600px;
+	margin: auto;
+}
+
+/* Botón con Efectos */
+.banner-btn {
+	background-color: #ff7300;
+	color: white;
+	padding: 10px 20px;
+	font-size: 18px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.banner-btn:hover {
+	background-color: yellow;
+	color: black;
+	box-shadow: 0px 0px 15px yellow;
+}
+/* Galería de imágenes */
+/* Contenedor de la galería */
+.galeria-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 10px;
+	justify-items: center;
+	padding: 20px;
+}
+
+/* Estilos de las imágenes */
+.imagen-galeria {
+	width: 100%;
+	max-width: 250px;
+	border-radius: 10px;
+	/* transition: transform 0.3s, box-shadow 0.3s; */
+	transition: transform 0.5s;
+}
+
+/* Efecto de zoom */
+.imagen-galeria:hover {
+	transform: rotateY(15deg) scale(1.1);
+	box-shadow: 0 0 15px yellow;
+}
+
+/* Modal */
+
+.color-fuente-slide {
+	color: black;
+	font-size: 25px;
+}
+/* Contenedor del slide */
+/* Estilos generales de la sección */
+#frases {
+	background: linear-gradient(
+		90deg,
+		rgba(255, 115, 0, 0.4),
+		rgba(255, 200, 50, 0.3)
+	);
+	padding: 30px;
+	border-radius: 10px;
+	border: 2px solid yellow;
+	box-shadow: 0px 0px 15px rgba(255, 255, 0, 0.5);
+}
+
+/* Contenedor de frases con diseño más elegante */
+.frase-container {
+	text-align: center;
+	font-size: 22px;
+	font-weight: bold;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.4);
+	padding: 20px;
+	border-radius: 10px;
+	min-height: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+/* Estilos para las frases */
+.frase-container p {
+	opacity: 0;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	transition: opacity 0.5s ease-in-out;
+	text-shadow: 0px 0px 10px rgba(255, 115, 0, 0.4);
+}
+
+/* Frase activa con más fuerza visual */
+.frase-activa {
+	opacity: 1;
+	position: relative;
+}
+
+/* Decoración opcional */
+#frases::before {
+	content: "⚡";
+	font-size: 40px;
+	color: yellow;
+	position: absolute;
+	top: -15px;
+	left: -15px;
+}
+/* Animación suave */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+/* Estilos de cada Card */
+/* Contenedor de las Cards */
+.card-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+}
+
+/* Estilos de cada Card */
+.card {
+	width: 300px;
+	background-color: #222;
+	border-radius: 10px;
+	padding: 20px;
+	text-align: center;
+	transition: transform 0.3s;
+}
+
+.card h3 {
+	color: #ff7300;
+}
+
+.card p {
+	color: white;
+}
+
+/* Animación al aparecer */
+@keyframes aparecer {
+	from {
+		opacity: 0;
+		transform: scale(0.8);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.card {
+	animation: aparecer 0.5s ease-in-out;
+}
+
+/* Efectos al pasar el cursor */
+.card:hover {
+	transform: scale(1.1);
+	box-shadow: 0 0 15px yellow;
+}
+
+/* Imágenes dentro de las Cards */
+.card img {
+	width: 100%;
+	border-radius: 10px;
+	margin-bottom: 10px;
+}
+.card-container-lugares {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 20px;
+}
+
+.card-lugares {
+	width: 300px;
+	background-color: #222;
+	border-radius: 10px;
+	padding: 15px;
+	text-align: center;
+	transition: transform 0.3s;
+}
+
+.card-lugares:hover {
+	transform: scale(1.1);
+	box-shadow: 0 0 15px yellow;
+}
+
+.card-lugares img {
+	width: 100%;
+	border-radius: 10px;
+}
+
+/* Pie de página */
+footer {
+	background-color: #ff7300;
+	padding: 15px;
+	margin-top: 30px;
+}
+
+/* Ajustes generales */
+body {
+	font-size: 18px;
+}
+
+/* 🌟 Para pantallas menores a 1024px (tabletas) */
+@media screen and (max-width: 1024px) {
+	.card-container {
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.card {
+		width: 80%;
+	}
+
+	nav ul {
+		flex-direction: column;
+		gap: 10px;
+	}
+}
+
+/* 📱 Para pantallas menores a 768px (móviles) */
+@media screen and (max-width: 768px) {
+	header {
+		text-align: center;
+		padding: 15px;
+	}
+
+	header h1 {
+		font-size: 24px;
+	}
+
+	nav ul {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.banner-title {
+		font-size: 28px;
+	}
+
+	.banner-text {
+		font-size: 16px;
+	}
+
+	.banner-btn {
+		font-size: 16px;
+		padding: 8px 15px;
+	}
+
+	.card-container {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.card {
+		width: 90%;
+	}
+
+	.frase-container {
+		font-size: 18px;
+		min-height: 60px;
+	}
+}
+
+/* 🔹 Para pantallas menores a 480px (móviles pequeños) */
+@media screen and (max-width: 480px) {
+	header h1 {
+		font-size: 20px;
+	}
+
+	.banner-title {
+		font-size: 24px;
+	}
+
+	.banner-btn {
+		font-size: 14px;
+	}
+
+	.card {
+		width: 100%;
+	}
+
+	.frase-container {
+		font-size: 16px;
+		min-height: 50px;
+	}
+}
