@@ -15,27 +15,31 @@ body {
 }
 
 /* Encabezado */
-/* Header con fondo llamativo */
+/* Estilos generales del header */
 header {
-	background: linear-gradient(90deg, #ff7300, #ff4500);
-	padding: 20px;
+	background: linear-gradient(
+		90deg,
+		rgba(50, 50, 50, 0.9),
+		rgba(25, 25, 112, 0.9)
+	);
+	padding: 25px;
 	text-align: center;
-	border-bottom: 5px solid yellow;
+	border-bottom: 4px solid yellow;
 }
 
-/* Contenedor para organizar contenido */
+/* Contenedor del header */
 .header-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-/* Estilo del título */
+/* Estilos del título */
 header h1 {
 	color: white;
-	font-size: 32px;
+	font-size: 56px;
 	font-weight: bold;
-	margin-bottom: 10px;
+	text-shadow: 0px 0px 10px rgb(150, 80, 19);
 }
 
 /* Menú de navegación */
@@ -43,13 +47,14 @@ nav ul {
 	list-style: none;
 	padding: 0;
 	display: flex;
-	gap: 20px;
+	gap: 15px;
 }
 
 nav ul li {
 	display: inline-block;
 }
 
+/* Estilos de los enlaces */
 nav ul li a {
 	text-decoration: none;
 	color: white;
@@ -65,8 +70,8 @@ nav ul li a {
 nav ul li a:hover {
 	background-color: yellow;
 	color: black;
+	box-shadow: 0px 0px 10px yellow;
 }
-
 /* Sección de bienvenida */
 section {
 	padding: 30px;
@@ -205,7 +210,6 @@ section {
 
 /* Decoración opcional */
 #frases::before {
-	content: "⚡";
 	font-size: 40px;
 	color: yellow;
 	position: absolute;
@@ -378,26 +382,154 @@ body {
 	}
 }
 
+/* Contenedor general */
+#enlaces-relacionados {
+	padding: 30px;
+	text-align: center;
+	background: linear-gradient(
+		90deg,
+		rgba(255, 115, 0, 0.4),
+		rgba(255, 200, 50, 0.3)
+	);
+	border-radius: 10px;
+	border: 2px solid yellow;
+	box-shadow: 0px 0px 15px rgba(255, 255, 0, 0.5);
+}
+
+/* Contenedor general */
+#enlaces-relacionados {
+	padding: 40px;
+	text-align: center;
+	background: linear-gradient(
+		90deg,
+		rgba(0, 0, 0, 0.8),
+		rgba(25, 25, 112, 0.7)
+	);
+	border-radius: 10px;
+	border: 2px solid yellow;
+	box-shadow: 0px 0px 20px rgba(255, 255, 0, 0.5);
+}
+
+/* 🌟 Diseño en Grid */
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+	gap: 20px;
+	justify-content: center;
+	margin-bottom: 40px;
+}
+
+/* Estilos de los enlaces */
+.grid-item {
+	background-color: rgba(255, 115, 0, 0.3);
+	padding: 20px;
+	border-radius: 10px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+	transition: 0.3s;
+}
+
+.grid-item a {
+	text-decoration: none;
+	color: white;
+}
+
+.grid-item:hover {
+	background-color: yellow;
+	transform: scale(1.1);
+	box-shadow: 0px 0px 15px yellow;
+}
+/* 📜 Línea de Tiempo */
+/* Contenedor de la línea de tiempo */
+#linea-tiempo {
+	padding: 40px;
+	text-align: center;
+	max-width: 900px;
+	margin: auto;
+}
+
+/* 🐉 Sección de cada serie */
+.timeline-section {
+	margin-bottom: 30px;
+	padding: 25px;
+	border-radius: 15px;
+}
+
+/* 📌 Diseño de cada saga */
+.timeline-content {
+	padding: 20px;
+	background-color: rgba(0, 0, 0, 0.4);
+	border-radius: 10px;
+	transition: 0.3s ease-in-out;
+}
+
+/* ✨ Efectos suaves */
+.timeline-content:hover {
+	transform: scale(1.03);
+	box-shadow: 0px 0px 10px yellow;
+}
+/* 🌟 Para pantallas menores a 1024px (tabletas) */
+@media screen and (max-width: 1024px) {
+	.grid-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.timeline-item {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.timeline-dot {
+		margin: 10px auto;
+	}
+
+	.timeline-content {
+		width: 90%;
+	}
+}
+
+/* 📱 Para pantallas menores a 768px (móviles) */
+@media screen and (max-width: 768px) {
+	header {
+		text-align: center;
+		padding: 15px;
+	}
+
+	nav ul {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.grid-container {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.timeline {
+		flex-direction: column;
+	}
+
+	.timeline-item {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.timeline-dot {
+		margin-bottom: 10px;
+	}
+}
+
 /* 🔹 Para pantallas menores a 480px (móviles pequeños) */
 @media screen and (max-width: 480px) {
 	header h1 {
 		font-size: 20px;
 	}
 
-	.banner-title {
-		font-size: 24px;
+	.grid-container {
+		grid-template-columns: repeat(1, 1fr);
 	}
 
-	.banner-btn {
-		font-size: 14px;
-	}
-
-	.card {
-		width: 100%;
-	}
-
-	.frase-container {
+	.timeline-content {
 		font-size: 16px;
-		min-height: 50px;
 	}
 }
