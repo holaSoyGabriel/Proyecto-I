@@ -35,55 +35,39 @@ function cerrarModal() {
 }
 
 function toggleCollapse(id) {
-    let content = document.getElementById(id);
-    content.classList.toggle("active");
+	let content = document.getElementById(id);
+	content.classList.toggle("active");
 
-    if (content.classList.contains("active")) {
-        content.style.maxHeight = content.scrollHeight + "px";
-    } else {
-        content.style.maxHeight = "0";
-    }
+	if (content.classList.contains("active")) {
+		content.style.maxHeight = content.scrollHeight + "px";
+	} else {
+		content.style.maxHeight = "0";
+	}
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    let frases = document.querySelectorAll(".frase-container p");
-    let indiceFrase = 0;
+	let frases = document.querySelectorAll(".frase-container p");
+	let indiceFrase = 0;
 
-    function cambiarFrase() {
-        // Ocultar todas las frases
-        frases.forEach((frase) => {
-            frase.style.visibility = "hidden";
-            frase.style.opacity = "0";
-        });
+	function cambiarFrase() {
+		// Ocultar todas las frases
+		frases.forEach((frase) => {
+			frase.style.visibility = "hidden";
+			frase.style.opacity = "0";
+		});
 
-        // Mostrar la frase actual
-        frases[indiceFrase].style.visibility = "visible";
-        frases[indiceFrase].style.opacity = "1";
+		// Mostrar la frase actual
+		frases[indiceFrase].style.visibility = "visible";
+		frases[indiceFrase].style.opacity = "1";
 
-        // Pasar a la siguiente frase
-        indiceFrase = (indiceFrase + 1) % frases.length;
-    }
+		// Pasar a la siguiente frase
+		indiceFrase = (indiceFrase + 1) % frases.length;
+	}
 
-    // Asegurar que la primera frase sea visible al cargar
-    frases[0].style.visibility = "visible";
-    frases[0].style.opacity = "1";
+	// Asegurar que la primera frase sea visible al cargar
+	frases[0].style.visibility = "visible";
+	frases[0].style.opacity = "1";
 
-    // Cambiar la frase cada 4 segundos
-    setInterval(cambiarFrase, 4000);
+	// Cambiar la frase cada 4 segundos
+	setInterval(cambiarFrase, 4000);
 });
-/**
- * function animarTitulo() {
- *     let colores = ["#ff7300", "yellow", "#ff0000", "#ff7300"];
- *     let titulo = document.querySelector("h1");
- *     let i = 0;
- *
- *     setInterval(() => {
- *         titulo.style.color = colores[i];
- *         i = (i + 1) % colores.length;
- *     }, 500);
- * }
- *
- * window.onload = animarTitulo;
- *
- *
- */
