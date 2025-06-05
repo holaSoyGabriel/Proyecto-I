@@ -34,6 +34,17 @@ function cerrarModal() {
 	document.getElementById("modal").style.display = "none";
 }
 
+function toggleCollapse(id) {
+    let content = document.getElementById(id);
+    content.classList.toggle("active");
+
+    if (content.classList.contains("active")) {
+        content.style.maxHeight = content.scrollHeight + "px";
+    } else {
+        content.style.maxHeight = "0";
+    }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
     let frases = document.querySelectorAll(".frase-container p");
     let indiceFrase = 0;
